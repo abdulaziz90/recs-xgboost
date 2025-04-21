@@ -19,3 +19,5 @@ data/
 
 # Studio
 .ipynb_checkpoints/
+.bst
+.tar.gz
