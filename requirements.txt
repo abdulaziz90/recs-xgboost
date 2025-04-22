@@ -1,0 +1,8 @@
+flask
+xgboost
+pandas
+numpy
+requests
+scikit-learn
+sagemaker
+boto3
