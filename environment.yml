@@ -1,17 +1,40 @@
-name: recs-demo
+name: recs-prediction
 channels:
+  - conda-forge
   - defaults
+
 dependencies:
+  # Core language
   - python=3.9
+
+  # AWS & SageMaker
+  - boto3
+  - sagemaker
+
+  # Data handling & I/O
+  - pandas
+  - numpy
+  - pyarrow
+
+  # Modeling
+  - scikit-learn
+  - xgboost
+  - shap
+
+  # Visualization
+  - matplotlib
+  - seaborn
+
+  # Serving & HTTP
+  - flask
+  - requests
+
+  # Notebooks / kernels
+  - jupyterlab
+  - ipykernel
+
+  # If you need any pip‐only packages, you can list them here
   - pip
   - pip:
-    - pandas
-    - numpy
-    - xgboost
-    - scikit-learn
-    - sagemaker
-    - boto3
-    - flask
-    - requests
-    - matplotlib
-    - seaborn
+    # (uncomment / add if needed)
+    # - some-pip-only-package==1.2.3
