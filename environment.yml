@@ -1,0 +1,15 @@
+name: recs-demo
+channels:
+  - defaults
+dependencies:
+  - python=3.9           # or 3.8 / 3.10—whatever you’re using
+  - pip
+  - pip:
+    - flask              # for local REST API
+    - xgboost            # model training & inference
+    - pandas             # dataframes
+    - numpy              # numeric ops
+    - requests           # calling your API
+    - scikit-learn       # train/validation split & metrics
+    - sagemaker          # if you’re using SageMaker Estimator locally or in‑cloud
+    - boto3              # downloading/uploading from S3
