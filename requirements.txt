@@ -1,8 +1,10 @@
-flask
-xgboost
 pandas
 numpy
-requests
+xgboost
 scikit-learn
 sagemaker
 boto3
+flask
+requests
+matplotlib
+seaborn
