@@ -1,1 +1,1 @@
-# recs-xgboost-demo
+# recs-xgboost
