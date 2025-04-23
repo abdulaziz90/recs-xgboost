@@ -1,0 +1,9 @@
+digest: b3ea3d25
+name: train
+profile: '{"features_shape": [5000, 837], "features_size": 4185000, "features_nbytes":
+  16740000}'
+schema: '{"mlflow_tensorspec": {"features": "[{\"type\": \"tensor\", \"tensor-spec\":
+  {\"dtype\": \"float32\", \"shape\": [-1, 837]}}]", "targets": null}}'
+source: '{"tags": {"mlflow.user": "sagemaker-user", "mlflow.source.name": "/opt/conda/lib/python3.12/site-packages/ipykernel_launcher.py",
+  "mlflow.source.type": "LOCAL"}}'
+source_type: code

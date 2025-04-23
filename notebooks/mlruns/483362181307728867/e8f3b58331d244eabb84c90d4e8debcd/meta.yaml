@@ -1,0 +1,15 @@
+artifact_uri: file:///home/sagemaker-user/recs-xgboost-demo/notebooks/mlruns/483362181307728867/e8f3b58331d244eabb84c90d4e8debcd/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '483362181307728867'
+lifecycle_stage: active
+run_id: e8f3b58331d244eabb84c90d4e8debcd
+run_name: sassy-boar-186
+run_uuid: e8f3b58331d244eabb84c90d4e8debcd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745403390114
+status: 1
+tags: []
+user_id: sagemaker-user

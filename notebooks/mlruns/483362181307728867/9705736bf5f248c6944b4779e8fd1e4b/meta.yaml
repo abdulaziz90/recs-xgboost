@@ -1,0 +1,15 @@
+artifact_uri: file:///home/sagemaker-user/recs-xgboost-demo/notebooks/mlruns/483362181307728867/9705736bf5f248c6944b4779e8fd1e4b/artifacts
+end_time: 1745405644075
+entry_point_name: ''
+experiment_id: '483362181307728867'
+lifecycle_stage: active
+run_id: 9705736bf5f248c6944b4779e8fd1e4b
+run_name: efficient-quail-42
+run_uuid: 9705736bf5f248c6944b4779e8fd1e4b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745405621495
+status: 3
+tags: []
+user_id: sagemaker-user

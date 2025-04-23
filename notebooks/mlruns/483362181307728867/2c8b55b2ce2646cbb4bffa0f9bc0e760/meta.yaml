@@ -1,0 +1,15 @@
+artifact_uri: file:///home/sagemaker-user/recs-xgboost-demo/notebooks/mlruns/483362181307728867/2c8b55b2ce2646cbb4bffa0f9bc0e760/artifacts
+end_time: 1745405802779
+entry_point_name: ''
+experiment_id: '483362181307728867'
+lifecycle_stage: active
+run_id: 2c8b55b2ce2646cbb4bffa0f9bc0e760
+run_name: unequaled-swan-129
+run_uuid: 2c8b55b2ce2646cbb4bffa0f9bc0e760
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745405769855
+status: 3
+tags: []
+user_id: sagemaker-user

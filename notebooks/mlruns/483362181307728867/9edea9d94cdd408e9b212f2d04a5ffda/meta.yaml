@@ -1,0 +1,15 @@
+artifact_uri: file:///home/sagemaker-user/recs-xgboost-demo/notebooks/mlruns/483362181307728867/9edea9d94cdd408e9b212f2d04a5ffda/artifacts
+end_time: 1745405769841
+entry_point_name: ''
+experiment_id: '483362181307728867'
+lifecycle_stage: active
+run_id: 9edea9d94cdd408e9b212f2d04a5ffda
+run_name: victorious-bear-518
+run_uuid: 9edea9d94cdd408e9b212f2d04a5ffda
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745405749757
+status: 3
+tags: []
+user_id: sagemaker-user

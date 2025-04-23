@@ -1,0 +1,15 @@
+artifact_uri: file:///home/sagemaker-user/recs-xgboost-demo/notebooks/mlruns/483362181307728867/7b1992a957af48c58531f7a1f6c2705d/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '483362181307728867'
+lifecycle_stage: active
+run_id: 7b1992a957af48c58531f7a1f6c2705d
+run_name: chill-tern-963
+run_uuid: 7b1992a957af48c58531f7a1f6c2705d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745404363486
+status: 1
+tags: []
+user_id: sagemaker-user

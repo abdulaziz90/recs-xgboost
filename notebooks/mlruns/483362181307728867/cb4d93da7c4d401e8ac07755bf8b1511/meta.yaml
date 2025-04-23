@@ -1,0 +1,15 @@
+artifact_uri: file:///home/sagemaker-user/recs-xgboost-demo/notebooks/mlruns/483362181307728867/cb4d93da7c4d401e8ac07755bf8b1511/artifacts
+end_time: 1745402785659
+entry_point_name: ''
+experiment_id: '483362181307728867'
+lifecycle_stage: active
+run_id: cb4d93da7c4d401e8ac07755bf8b1511
+run_name: peaceful-stork-200
+run_uuid: cb4d93da7c4d401e8ac07755bf8b1511
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745402609370
+status: 3
+tags: []
+user_id: sagemaker-user

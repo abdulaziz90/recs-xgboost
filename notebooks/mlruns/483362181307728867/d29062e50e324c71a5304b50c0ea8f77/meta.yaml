@@ -1,0 +1,15 @@
+artifact_uri: file:///home/sagemaker-user/recs-xgboost-demo/notebooks/mlruns/483362181307728867/d29062e50e324c71a5304b50c0ea8f77/artifacts
+end_time: 1745403975374
+entry_point_name: ''
+experiment_id: '483362181307728867'
+lifecycle_stage: active
+run_id: d29062e50e324c71a5304b50c0ea8f77
+run_name: spiffy-pig-1
+run_uuid: d29062e50e324c71a5304b50c0ea8f77
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745403974665
+status: 4
+tags: []
+user_id: sagemaker-user

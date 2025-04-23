@@ -1,0 +1,15 @@
+artifact_uri: file:///home/sagemaker-user/recs-xgboost-demo/notebooks/mlruns/483362181307728867/a0b41c5dbef34b1cb1f63cfc547ff3a2/artifacts
+end_time: 1745405521829
+entry_point_name: ''
+experiment_id: '483362181307728867'
+lifecycle_stage: active
+run_id: a0b41c5dbef34b1cb1f63cfc547ff3a2
+run_name: rebellious-sloth-503
+run_uuid: a0b41c5dbef34b1cb1f63cfc547ff3a2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745405493159
+status: 4
+tags: []
+user_id: sagemaker-user

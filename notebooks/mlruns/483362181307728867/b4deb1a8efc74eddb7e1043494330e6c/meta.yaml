@@ -1,0 +1,15 @@
+artifact_uri: file:///home/sagemaker-user/recs-xgboost-demo/notebooks/mlruns/483362181307728867/b4deb1a8efc74eddb7e1043494330e6c/artifacts
+end_time: 1745405261832
+entry_point_name: ''
+experiment_id: '483362181307728867'
+lifecycle_stage: active
+run_id: b4deb1a8efc74eddb7e1043494330e6c
+run_name: skittish-flea-939
+run_uuid: b4deb1a8efc74eddb7e1043494330e6c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745405249985
+status: 3
+tags: []
+user_id: sagemaker-user

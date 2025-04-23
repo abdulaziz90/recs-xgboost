@@ -1,0 +1,9 @@
+digest: a1f67cde
+name: valid
+profile: '{"features_shape": [2960, 837], "features_size": 2477520, "features_nbytes":
+  9910080}'
+schema: '{"mlflow_tensorspec": {"features": "[{\"type\": \"tensor\", \"tensor-spec\":
+  {\"dtype\": \"float32\", \"shape\": [-1, 837]}}]", "targets": null}}'
+source: '{"tags": {"mlflow.user": "sagemaker-user", "mlflow.source.name": "/opt/conda/lib/python3.12/site-packages/ipykernel_launcher.py",
+  "mlflow.source.type": "LOCAL"}}'
+source_type: code

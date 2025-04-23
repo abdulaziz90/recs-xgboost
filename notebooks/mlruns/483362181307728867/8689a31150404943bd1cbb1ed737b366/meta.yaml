@@ -1,0 +1,15 @@
+artifact_uri: file:///home/sagemaker-user/recs-xgboost-demo/notebooks/mlruns/483362181307728867/8689a31150404943bd1cbb1ed737b366/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '483362181307728867'
+lifecycle_stage: active
+run_id: 8689a31150404943bd1cbb1ed737b366
+run_name: intrigued-shark-967
+run_uuid: 8689a31150404943bd1cbb1ed737b366
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745404050933
+status: 1
+tags: []
+user_id: sagemaker-user

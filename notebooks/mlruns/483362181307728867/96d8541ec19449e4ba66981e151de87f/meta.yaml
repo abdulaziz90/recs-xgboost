@@ -1,0 +1,15 @@
+artifact_uri: file:///home/sagemaker-user/recs-xgboost-demo/notebooks/mlruns/483362181307728867/96d8541ec19449e4ba66981e151de87f/artifacts
+end_time: 1745405848114
+entry_point_name: ''
+experiment_id: '483362181307728867'
+lifecycle_stage: active
+run_id: 96d8541ec19449e4ba66981e151de87f
+run_name: sincere-toad-662
+run_uuid: 96d8541ec19449e4ba66981e151de87f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745405830972
+status: 3
+tags: []
+user_id: sagemaker-user

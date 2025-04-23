@@ -1,0 +1,6 @@
+artifact_location: file:///home/sagemaker-user/recs-xgboost-demo/notebooks/mlruns/483362181307728867
+creation_time: 1745402605021
+experiment_id: '483362181307728867'
+last_update_time: 1745402605021
+lifecycle_stage: active
+name: recs_xgb_tuning

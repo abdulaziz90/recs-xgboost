@@ -1,0 +1,15 @@
+artifact_uri: file:///home/sagemaker-user/recs-xgboost-demo/notebooks/mlruns/483362181307728867/c63084d1b7a348d880c84fc6f3a48ebc/artifacts
+end_time: 1745405892741
+entry_point_name: ''
+experiment_id: '483362181307728867'
+lifecycle_stage: active
+run_id: c63084d1b7a348d880c84fc6f3a48ebc
+run_name: glamorous-kite-969
+run_uuid: c63084d1b7a348d880c84fc6f3a48ebc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745405848138
+status: 3
+tags: []
+user_id: sagemaker-user
