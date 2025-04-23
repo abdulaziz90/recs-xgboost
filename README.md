@@ -16,8 +16,6 @@ This project presents an end‑to‑end pipeline that:
 5. **Evaluates** model performance (RMSE, feature importance, SHAP)
 6. **Serves** batch predictions via a Flask HTTP API
 
-By following these steps, you’ll gain hands‑on experience in data processing, feature engineering, scalable model training on AWS, and deploying a lightweight inference service.
-
 ---
 
 ## 3. Table of Contents
