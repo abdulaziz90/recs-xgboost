@@ -97,7 +97,7 @@ Loads the ingested CSV from S3, inspects schema and distributions, and computes 
 Defines the regression target (`KWH`), filters out identifiers and leakage columns, one-hot encodes categorical variables, computes feature–target correlations, and writes Parquet train/test splits back to S3.
 
 ### 04_train.ipynb  
-**XGBoost Training & Hyperparameter Tuning with MLflow
+**XGBoost Training & Hyperparameter Tuning with MLflow**  
 Performs a lightweight Hyperopt-driven hyperparameter search (max_depth, eta) with MLflow tracking, prints trial RMSEs, summarizes results in a table, and retrains the best model on the full dataset before evaluating test RMSE.
 
 ### 05_deploy.ipynb  
