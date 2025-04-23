@@ -151,6 +151,7 @@ curl -X POST http://localhost:8080/predict \
 # 3) Expected Response
 # The server returns a JSON object with predicted annual electricity usages:
 # { "predictions": [13452.23, 9823.47] }
+```
 
 ---
 
