@@ -11,7 +11,7 @@ This project presents an end‑to‑end pipeline that:
 1. **Ingests** raw RECS 2020 data from the EIA website into Amazon S3
 2. **Explores** the dataset with interactive EDA
 3. **Engineers** leakage‑safe features and partitions into train/test splits
-4. **Trains** an XGBoost regressor both locally and in SageMaker
+4. **Trains** an XGBoost model with MLflow-driven hyperparameter tuning
 5. **Evaluates** model performance (RMSE, feature importance, SHAP)
 6. **Serves** batch predictions via a Flask HTTP API
 
@@ -69,11 +69,12 @@ This project presents an end‑to‑end pipeline that:
 │   ├── 01_data_ingest.ipynb       # Download & upload RECS CSV to S3
 │   ├── 02_eda.ipynb               # Exploratory Data Analysis
 │   ├── 03_features.ipynb          # Feature engineering & train/test split
-│   ├── 04_train.ipynb             # Local XGBoost training & evaluation
-│   ├── 04_train-cloud.ipynb       # SageMaker XGBoost training job
+│   ├── 04_train_MLflow.ipynb      # XGBoost training & hyperparameter tuning with MLflow
 │   └── 05_deploy.ipynb            # Batch inference against Flask endpoint
 ├── train.py                       # Entry point for SageMaker training
 ├── serve_flask.py                 # Flask app for model serving
+├── payload.json                   # Example inference payload sample
+├── model.bst                      # Serialized XGBoost booster for serving
 ├── requirements.txt               # pip dependencies
 ├── environment.yml                # conda environment spec
 └── README.md                      # This file
@@ -96,12 +97,8 @@ Loads the ingested CSV from S3, inspects schema and distributions, and computes 
 Defines the regression target (`KWH`), filters out identifiers and leakage columns, one-hot encodes categorical variables, computes feature–target correlations, and writes Parquet train/test splits back to S3.
 
 ### 04_train.ipynb  
-**Local XGBoost Training & Evaluation**  
-Trains an XGBoost model locally with early stopping, calculates RMSE on the hold-out test set, generates feature importance and SHAP plots, and packages the model for S3 upload.
-
-### 04_train-cloud.ipynb  
-**Cloud Training with SageMaker**  
-Launches a managed SageMaker training job using the built-in XGBoost container, monitors metrics, then downloads and extracts the resulting model artifact for in-notebook inference.
+**XGBoost Training & Hyperparameter Tuning with MLflow
+Performs a lightweight Hyperopt-driven hyperparameter search (max_depth, eta) with MLflow tracking, prints trial RMSEs, summarizes results in a table, and retrains the best model on the full dataset before evaluating test RMSE.
 
 ### 05_deploy.ipynb  
 **Batch Inference Demo**  
