@@ -1,7 +1,5 @@
 # RECS 2020 Electricity Usage Prediction
 
-\
-
 
 ## 1. Project Overview
 
