@@ -1,6 +1,7 @@
 # RECS 2020 Electricity Usage Prediction
 
 
+
 ## 1. Project Overview
 
 The U.S. Residential Energy Consumption Survey (RECS) is a rich source of data on housing characteristics and household energy usage. Accurately modeling and predicting a household’s annual electricity demand can help utilities, policymakers, and home‑energy auditors identify efficiency opportunities, plan capacity, and design targeted conservation programs.
