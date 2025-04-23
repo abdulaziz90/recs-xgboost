@@ -130,6 +130,7 @@ Lightweight Flask application exposing a `POST /predict` endpoint:
 
 This example demonstrates how to serve the trained model with Flask and make a batch prediction request.
 
+```bash
 # 1) Run the Flask server (it will load model.bst from cwd)
 python serve_flask.py
 
@@ -139,6 +140,7 @@ curl -X POST http://localhost:8080/predict \
      -d @payload.json
 
 # 3) Read the JSON response of predictions
+```
 
 ---
 
