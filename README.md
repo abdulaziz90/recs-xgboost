@@ -130,28 +130,15 @@ Lightweight Flask application exposing a `POST /predict` endpoint:
 
 This example demonstrates how to serve the trained model with Flask and make a batch prediction request.
 
-```bash
-# 1) Run the Flask Server
+# 1) Run the Flask server (it will load model.bst from cwd)
 python serve_flask.py
-# By default, the server listens on http://0.0.0.0:8080
 
-# 2) Generate a JSON payload from a sample of the test split and send the request
-generated_payload=$(python - << 'EOF'
-import pandas as pd, json
-# Update the S3 path below
-df = pd.read_parquet('s3://<your-bucket>/recs/test/X_test.parquet')
-print(json.dumps(df.head(2).to_dict(orient='records')))
-EOF
-)
-
+# 2) Fire off the bundled payload.json
 curl -X POST http://localhost:8080/predict \
      -H "Content-Type: application/json" \
-     -d "$generated_payload"
+     -d @payload.json
 
-# 3) Expected Response
-# The server returns a JSON object with predicted annual electricity usages:
-# { "predictions": [13452.23, 9823.47] }
-```
+# 3) Read the JSON response of predictions
 
 ---
 
