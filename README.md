@@ -84,96 +84,80 @@ This project presents an end‑to‑end pipeline that:
 
 ## 7. Notebooks
 
-### 01\_data\_ingest.ipynb
+### 01_data_ingest.ipynb  
+**Ingest RECS 2020 CSV into S3**  
+Downloads the official CSV, initializes an AWS SageMaker session, and uploads the raw file to your S3 bucket under `recs/`.
 
-**Ingest RECS 2020 CSV into S3**\
-Downloads the official CSV, initializes an AWS SageMaker session, and uploads the raw file to your S3 bucket und55er `recs/`.
+### 02_eda.ipynb  
+**Exploratory Data Analysis**  
+Loads the ingested CSV from S3, inspects schema and distributions, and computes summary statistics to understand data quality and variable ranges.
 
-### 02\_eda.ipynb
+### 03_features.ipynb  
+**Feature Engineering & Splits**  
+Defines the regression target (`KWH`), filters out identifiers and leakage columns, one-hot encodes categorical variables, computes feature–target correlations, and writes Parquet train/test splits back to S3.
 
-**Exploratory Data Analysis**\
-Loads the ingested CSV from S3, inspects schema and distributions, and computes summary statistics to understand  n
+### 04_train.ipynb  
+**Local XGBoost Training & Evaluation**  
+Trains an XGBoost model locally with early stopping, calculates RMSE on the hold-out test set, generates feature importance and SHAP plots, and packages the model for S3 upload.
 
-### 04\_train.ipynb
+### 04_train-cloud.ipynb  
+**Cloud Training with SageMaker**  
+Launches a managed SageMaker training job using the built-in XGBoost container, monitors metrics, then downloads and extracts the resulting model artifact for in-notebook inference.
 
-**Local XGBoost Training & Evaluation**\
-Trains an XGBoost model locally with early stopping, calculates RMSE on the hold‑out test set, generates feature importance and SHAP plots, and packages the model for S3 upload.l; §§04\_train-cloud.ipynb
-
-**Cloud Training with SageMaker**\
-Launches a managed SageMaker training job using the built‑in XGBoost container, monitors metrics, then downloads and extracts the resulting model artifact for in‑notebook inference.
-
-### 05\_deploy.ipynb
-
-**Batch Inference Demo**\
+### 05_deploy.ipynb  
+**Batch Inference Demo**  
 Loads a small sample of the test set from S3, serializes it to JSON, calls the Flask `/predict` endpoint, and prints the predicted electricity usages.
 
 ---
 
 ## 8. Scripts
 
-### train.py
-
-Command‑line training script used by SageMaker’s XGBoost container.
-
-- Reads Parquet files from `/opt/ml/input/data/train`
-- Parses hyperparameters via `argparse`
-- Trains with early stopping
+### train.py  
+Entry point for SageMaker’s XGBoost container.  
+- Reads Parquet files from `/opt/ml/input/data/train`  
+- Parses hyperparameters via `argparse`  
+- Trains with early stopping  
 - Writes `model.bst` to `$SM_MODEL_DIR`
 
-### serve\_flask.py
+### serve_flask.py  
+Lightweight Flask application exposing a `POST /predict` endpoint:  
+- Loads `model.bst` at startup  
+- Accepts JSON batches of feature dicts  
+- Returns back-transformed predictions
+  
+---
 
-Lightweight Flask application exposing a `POST /predict` endpoint:
+## 9. Deployment & Inference Example
 
-- Loads `model.bst` at startup
-- Accepts JSON batches of feature dicts
-- Returns back‑transformed predictions
+This example demonstrates how to serve the trained model with Flask and make a batch prediction request.
+
+```bash
+# 1) Run the Flask Server
+python serve_flask.py
+# By default, the server listens on http://0.0.0.0:8080
+
+# 2) Generate a JSON payload from a sample of the test split and send the request
+generated_payload=$(python - << 'EOF'
+import pandas as pd, json
+# Update the S3 path below
+df = pd.read_parquet('s3://<your-bucket>/recs/test/X_test.parquet')
+print(json.dumps(df.head(2).to_dict(orient='records')))
+EOF
+)
+
+curl -X POST http://localhost:8080/predict \
+     -H "Content-Type: application/json" \
+     -d "$generated_payload"
+
+# 3) Expected Response
+# The server returns a JSON object with predicted annual electricity usages:
+# { "predictions": [13452.23, 9823.47] }
 
 ---
 
-## 9. Usage Examples
+## 10. Contact
 
-1. **Data Ingestion & EDA**
-
-   ```bash
-   jupyter nbconvert --to notebook --execute notebooks/01_data_ingest.ipynb
-   jupyter nbconvert --to notebook --execute notebooks/02_eda.ipynb
-   ```
-
-2. **Feature Preparation**
-
-   ```bash
-   jupyter nbconvert --to notebook --execute notebooks/03_features.ipynb
-   ```
-
-3. **Local Training**
-
-   ```bash
-   jupyter nbconvert --to notebook --execute notebooks/04_train.ipynb
-   ```
-
-4. **Cloud Training**
-
-   ```bash
-   jupyter nbconvert --to notebook --execute notebooks/04_train-cloud.ipynb
-   ```
-
-5. **Run the Flask Server**
-
-   ```bash
-   python serve_flask.py
-   ```
-
-6. **Batch Inference**
-
-   ```bash
-   jupyter nbconvert --to notebook --execute notebooks/05_deploy.ipynb
-   ```
-
----
-
-## 10. Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request with a clear description of your changes.
+- **Contact:** aazizai@proton.me  (**Academic correspondence:** a.abdulaziz@hw.ac.uk)
 
 ---
 
